@@ -1,13 +1,100 @@
+
 <!DOCTYPE html>
 <html lang="th">
-<head><meta charset="UTF-8"><title>แนะนำตัว</title></head>
-<body style="text-align:center;background:lightblue;">
-<h1>สวัสดีค่ะ</h1>
-<h2>ณิชานันท์ สุทรนันท</h2>
-<p>แผนกเทคโนโลยีสารสนเทศ</p>
-<p>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</p>
-<button onclick="hello()">ทักทาย</button>
-<p id="demo"></p>
-<script>function hello(){document.getElementById('demo').innerHTML='ยินดีที่ได้รู้จักค่ะ';}</script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile 💗</title>
+
+<style>
+body {
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ffd6e7, #e6d6ff);
+    padding: 40px 15px;
+    min-height: 100vh;
+    margin: 0;
+}
+.box {
+    background: white;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px #d68bb555;
+}
+h1 { color: #ff69a6; }
+h2 { color: #a66bd4; }
+p { color: #666; line-height: 1.8; }
+.icon { font-size: 65px; }
+.email {
+    background: #fff0f6;
+    padding: 12px;
+    border-radius: 15px;
+    color: #d94c91;
+    overflow-wrap: anywhere;
+}
+button {
+    background: #ff80b5;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background: #ed5795;
+}
+#demo {
+    color: #e75495;
+    font-weight: bold;
+}
+footer {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <div class="icon">🎀🌷</div>
+
+    <h1>สวัสดีค่ะ 💗</h1>
+    <h2>ณิชานันท์ สุทรนันท</h2>
+
+    <p>นักศึกษาแผนกเทคโนโลยีสารสนเทศ</p>
+
+    <p>ยินดีต้อนรับสู่เว็บไซต์แนะนำตัวของฉัน</p>
+
+    <p>🌸 ฉันชอบเรียนรู้เกี่ยวกับคอมพิวเตอร์</p>
+    <p>💻 สนใจเทคโนโลยีและการเขียนโปรแกรม</p>
+    <p>✨ พร้อมเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ</p>
+
+    <div class="email">
+        📧 nichananthsunthrnanth@gmail.com
+    </div>
+
+    <br>
+
+    <button onclick="hello()">กดเพื่อทักทาย 💕</button>
+
+    <p id="demo"></p>
+
+    <footer>
+        ♡ Thank you for visiting my website ♡
+    </footer>
+</div>
+
+<script>
+function hello() {
+    document.getElementById("demo").innerHTML =
+    "ยินดีที่ได้รู้จักค่ะ ขอบคุณที่เข้ามาเยี่ยมชม 💗🌷";
+}
+</script>
+
 </body>
 </html>
