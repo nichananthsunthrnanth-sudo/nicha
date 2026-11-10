@@ -1,99 +1,252 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Profile 💗</title>
+
+<title>โลกของสัตว์น่ารัก 🐾</title>
 
 <style>
-body {
-    font-family: Tahoma, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #ffd6e7, #e6d6ff);
-    padding: 40px 15px;
-    min-height: 100vh;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.box {
-    background: white;
-    max-width: 400px;
-    margin: auto;
-    padding: 30px 20px;
-    border-radius: 25px;
-    box-shadow: 0 8px 25px #d68bb555;
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f8ff;
+    color: #333;
 }
-h1 { color: #ff69a6; }
-h2 { color: #a66bd4; }
-p { color: #666; line-height: 1.8; }
-.icon { font-size: 65px; }
-.email {
-    background: #fff0f6;
-    padding: 12px;
-    border-radius: 15px;
-    color: #d94c91;
-    overflow-wrap: anywhere;
-}
-button {
-    background: #ff80b5;
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #43c6ac, #168c9a);
     color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* FILTER BUTTONS */
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 35px 15px;
+}
+
+.filters button {
     border: none;
-    padding: 12px 25px;
-    border-radius: 20px;
-    cursor: pointer;
+    padding: 13px 25px;
+    border-radius: 30px;
+    background: white;
+    color: #168c9a;
     font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 3px 10px #00000015;
 }
-button:hover {
-    background: #ed5795;
+
+.filters button:hover,
+.filters button.active {
+    background: #168c9a;
+    color: white;
+    transform: translateY(-4px);
 }
-#demo {
-    color: #e75495;
-    font-weight: bold;
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 20px 7%;
 }
+
+.card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 22px;
+    box-shadow: 0 4px 15px #00000015;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px #00000025;
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: #168c9a;
+    margin: 18px 10px;
+    font-size: 24px;
+}
+
+.card p {
+    padding: 0 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.hide {
+    display: none;
+}
+
+/* FOOTER */
 footer {
-    color: #aaa;
-    font-size: 12px;
-    margin-top: 20px;
+    background: #168c9a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    line-height: 2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="box">
-    <div class="icon">🎀🌷</div>
+<!-- HEADER -->
+<header>
+    <h1>🐾 โลกของสัตว์น่ารัก 🐾</h1>
+    <p>เปิดโลกการเรียนรู้ สัตว์น่ารักจากทั่วทุกมุมโลก</p>
+</header>
 
-    <h1>สวัสดีค่ะ 💗</h1>
-    <h2>ณิชานันท์ สุทรนันท</h2>
+<!-- FILTER -->
+<section class="filters">
+    <button class="active" data-filter="all">ทั้งหมด</button>
+    <button data-filter="pet">สัตว์เลี้ยง 🐶</button>
+    <button data-filter="wild">สัตว์ป่า 🦁</button>
+    <button data-filter="sea">สัตว์ทะเล 🐬</button>
+</section>
 
-    <p>นักศึกษาแผนกเทคโนโลยีสารสนเทศ</p>
+<!-- GALLERY -->
+<section class="gallery">
 
-    <p>ยินดีต้อนรับสู่เว็บไซต์แนะนำตัวของฉัน</p>
-
-    <p>🌸 ฉันชอบเรียนรู้เกี่ยวกับคอมพิวเตอร์</p>
-    <p>💻 สนใจเทคโนโลยีและการเขียนโปรแกรม</p>
-    <p>✨ พร้อมเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ</p>
-
-    <div class="email">
-        📧 nichananthsunthrnanth@gmail.com
+    <!-- 1 -->
+    <div class="card" data-category="pet">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600" alt="แมว">
+        <h3>🐱 แมว</h3>
+        <p>สัตว์เลี้ยงแสนน่ารัก ขี้อ้อน รักความสะอาด และชอบนอน</p>
     </div>
 
-    <br>
+    <!-- 2 -->
+    <div class="card" data-category="pet">
+        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600" alt="สุนัข">
+        <h3>🐶 สุนัข</h3>
+        <p>เพื่อนที่ซื่อสัตย์และเป็นมิตรกับมนุษย์</p>
+    </div>
 
-    <button onclick="hello()">กดเพื่อทักทาย 💕</button>
+    <!-- 3 -->
+    <div class="card" data-category="wild">
+        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=600" alt="สิงโต">
+        <h3>🦁 สิงโต</h3>
+        <p>เจ้าป่าแห่งทุ่งหญ้าแอฟริกา มีความแข็งแรงและสง่างาม</p>
+    </div>
 
-    <p id="demo"></p>
+    <!-- 4 -->
+    <div class="card" data-category="wild">
+        <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600" alt="เสือ">
+        <h3>🐯 เสือ</h3>
+        <p>สัตว์ป่าผู้สง่างาม มีลายพาดกลอนเป็นเอกลักษณ์</p>
+    </div>
 
-    <footer>
-        ♡ Thank you for visiting my website ♡
-    </footer>
-</div>
+    <!-- 5 -->
+    <div class="card" data-category="sea">
+        <img src="https://images.unsplash.com/photo-1545671913-b89ac1b4ac10?w=600" alt="ปลา">
+        <h3>🐠 ปลา</h3>
+        <p>สัตว์น้ำที่มีสีสันสวยงามและหลากหลายชนิด</p>
+    </div>
 
+    <!-- 6 -->
+    <div class="card" data-category="sea">
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="โลมา">
+        <h3>🐬 โลมา</h3>
+        <p>สัตว์ทะเลที่ฉลาด ร่าเริง และเป็นมิตร</p>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>🐾 โลกของสัตว์น่ารัก 🐾</h3>
+    <p>จัดทำโดย นักเรียน</p>
+    <p>เว็บไซต์เพื่อการศึกษา © 2026</p>
+</footer>
+
+<!-- JAVASCRIPT -->
 <script>
-function hello() {
-    document.getElementById("demo").innerHTML =
-    "ยินดีที่ได้รู้จักค่ะ ขอบคุณที่เข้ามาเยี่ยมชม 💗🌷";
-}
+
+const buttons = document.querySelectorAll(".filters button");
+const cards = document.querySelectorAll(".card");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        // เปลี่ยนสีปุ่มที่เลือก
+        buttons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+        // เลือกหมวดหมู่
+        const filter = this.dataset.filter;
+
+        // กรองข้อมูล
+        cards.forEach(card => {
+
+            if (
+                filter === "all" ||
+                card.dataset.category === filter
+            ) {
+                card.classList.remove("hide");
+            } else {
+                card.classList.add("hide");
+            }
+
+        });
+
+    });
+
+});
+
 </script>
 
 </body>
